@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 	"fmt"
-	"github.com/davilj/trademelib"
-)
+	trademelib "github.com/davilj/trademe/lib"
+	)
 
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	p("Running daily summary on:", dataDrive )
 
 	var pgSummaryHandler trademelib.PostgresSummaryHandler;
-	trademelib.CalcDailySums(dirForDailySummary, pgSummaryHandler)
+	trademelib.CalcDailySums(dataDrive, pgSummaryHandler)
 	p("Completed....")
 
 }

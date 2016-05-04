@@ -1,4 +1,4 @@
-package trademelib
+package trademe
 
 import (
     "database/sql"
