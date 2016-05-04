@@ -10,10 +10,11 @@ import (
 func main() {
 	p:=fmt.Println
 	p("Starting trademe")
-	argsWithoutProgram := os.Args[1:]
-
-	dirForDailySummary:=argsWithoutProgram[0]
-	p("Running daily summary on:", dirForDailySummary )
+	dataDrive:="/trademeData"
+	if (len(os.Args)>1) {
+		dataDrive=os.Args[1]
+	}
+	p("Running daily summary on:", dataDrive )
 
 	var pgSummaryHandler trademelib.PostgresSummaryHandler;
 	trademelib.CalcDailySums(dirForDailySummary, pgSummaryHandler)
