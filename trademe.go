@@ -9,6 +9,7 @@ import (
 
 func main() {
 	p:=fmt.Println
+
 	p("Starting trademe..1")
 	dataDrive:="/trademeData"
 	if (len(os.Args)>1) {
