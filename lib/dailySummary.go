@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"fmt"
 )
 
 type SummaryHandler interface {
@@ -39,6 +40,7 @@ func CalcDailySums(parentDir string, summaryHandler SummaryHandler) {
 	}
 	for key, value := range mapDayAndCat2Files {
 		for _, fileName := range value {
+			fmt.Println("--",fileName)
 			transactions, err := ExtractTransaction(key + "/" + fileName)
 			if err != nil {
 
